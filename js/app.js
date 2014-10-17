@@ -46,12 +46,16 @@ $(document).ready(function(){
 	function checkGuess(guess) {
 		if (isNaN(guess)) {
 			setFeedback("Be sure to only enter a number!");
+			return true;
 		} else if (guess % 1 != 0) {
 			setFeedback("Enter a whole number, please!");
+			return true;
 		} else if (guess < 1 || guess > 100) {
 			setFeedback("Please enter a number between 1 and 100!");
+			return true;
 		} else if ($.trim(guess) == "") {
 			setFeedback("Please enter your guess!");
+			return true;
 		} else {
 			return false;
 		};
